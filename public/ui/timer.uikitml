@@ -1,0 +1,111 @@
+<!-- Focus timer. BAR_WIDTH in focus-system.ts must match .bar width. -->
+<style>
+  .card {
+    flex-direction: column;
+    align-items: center;
+    width: 440px;
+    gap: 16px;
+    padding-top: 26px;
+    padding-bottom: 28px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 34px;
+    border-width: 2px;
+    border-color: #34363c;
+    background-color: #141518;
+  }
+  .eyebrow {
+    color: #9fb4ff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+  }
+  .chips {
+    flex-direction: row;
+    gap: 12px;
+  }
+  .chip {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 22px;
+    padding-right: 22px;
+    border-radius: 20px;
+    border-width: 2px;
+    border-color: #3a3b40;
+    background-color: #232427;
+    color: #e6e7ea;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .time {
+    color: #fafaf7;
+    font-size: 96px;
+    font-weight: 700;
+  }
+  .status {
+    color: #c9ccd4;
+    font-size: 20px;
+  }
+  .bar {
+    width: 380px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: #2a2c31;
+  }
+  .fill {
+    width: 0px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: #f5d90a;
+  }
+  .actions {
+    flex-direction: row;
+    gap: 14px;
+    margin-top: 4px;
+  }
+  .primary {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 44px;
+    padding-right: 44px;
+    border-radius: 26px;
+    background-color: #3a5cff;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .secondary {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-radius: 26px;
+    border-width: 2px;
+    border-color: #3a3b40;
+    background-color: #232427;
+    color: #e6e7ea;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+</style>
+<div class="card">
+  <div class="eyebrow">FOCUS BURST</div>
+  <div class="chips">
+    <div id="dur-5" class="chip">5 min</div>
+    <div id="dur-10" class="chip">10 min</div>
+    <div id="dur-25" class="chip">25 min</div>
+  </div>
+  <span id="timer-text" class="time">10:00</span>
+  <span id="timer-status" class="status">Ready when you are</span>
+  <div class="bar">
+    <div id="timer-fill" class="fill"></div>
+  </div>
+  <div class="actions">
+    <div id="start-btn" class="primary">Start</div>
+    <div id="pause-btn" class="primary" style="display: none">Pause</div>
+    <div id="reset-btn" class="secondary">Reset</div>
+  </div>
+</div>

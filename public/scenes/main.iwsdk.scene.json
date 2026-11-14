@@ -1,0 +1,105 @@
+{
+  "version": "iwsdk.scene.v1",
+  "units": "meters",
+  "components": {
+    "com.iwsdk.components.IBLGradient": {
+      "sky": [0.96, 0.94, 0.9, 1],
+      "equator": [0.8, 0.76, 0.7, 1],
+      "ground": [0.46, 0.42, 0.38, 1],
+      "intensity": 0.35
+    }
+  },
+  "environment": {
+    "toneMapping": "aces",
+    "exposure": 1,
+    "shadows": false
+  },
+  "resources": {},
+  "nodes": [
+    {
+      "id": "desk",
+      "name": "Focus Desk",
+      "transform": {
+        "position": [0, 1.2, -0.65]
+      },
+      "children": [
+        {
+          "id": "tasks-panel",
+          "name": "Tasks Panel",
+          "content": { "type": "asset", "asset": "tasks-panel" },
+          "transform": {
+            "position": [-0.37, 0, 0.06],
+            "rotationDeg": [-8, 22, 0],
+            "scale": 0.075
+          },
+          "components": { "RayInteractable": {} }
+        },
+        {
+          "id": "timer-panel",
+          "name": "Timer Panel",
+          "content": { "type": "asset", "asset": "timer-panel" },
+          "transform": {
+            "position": [0, 0, 0],
+            "rotationDeg": [-8, 0, 0],
+            "scale": 0.075
+          },
+          "components": { "RayInteractable": {} }
+        },
+        {
+          "id": "today-panel",
+          "name": "Today Panel",
+          "content": { "type": "asset", "asset": "today-panel" },
+          "transform": {
+            "position": [0.37, 0, 0.06],
+            "rotationDeg": [-8, -22, 0],
+            "scale": 0.075
+          },
+          "components": { "RayInteractable": {} }
+        },
+        {
+          "id": "focus-orb",
+          "name": "Focus Orb",
+          "metadata": { "iwsdk.validation": { "allowFloating": true } },
+          "content": { "type": "asset", "asset": "focus-orb" },
+          "transform": {
+            "position": [0, 0.17, 0.02]
+          },
+          "components": {
+            "AudioSource": {
+              "src": "./audio/chime.mp3",
+              "maxInstances": 3,
+              "playbackMode": "fade-restart"
+            },
+            "RayInteractable": {},
+            "FocusOrb": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "key-light",
+      "name": "Key Light",
+      "transform": {
+        "position": [-2, 6, 3],
+        "rotationDeg": [-60, -20, 0]
+      },
+      "components": {
+        "DirectionalLight": {
+          "color": [1, 0.945, 0.87, 1],
+          "intensity": 1.6
+        }
+      }
+    },
+    {
+      "id": "fill-light",
+      "name": "Fill Light",
+      "components": {
+        "HemisphereLight": {
+          "skyColor": [0.96, 0.94, 0.9, 1],
+          "groundColor": [0.55, 0.52, 0.48, 1],
+          "intensity": 1
+        }
+      }
+    }
+  ]
+}

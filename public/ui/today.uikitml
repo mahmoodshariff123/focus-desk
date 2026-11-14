@@ -1,0 +1,103 @@
+<!-- Today: progress, streak and XR entry. -->
+<style>
+  .card {
+    flex-direction: column;
+    width: 420px;
+    border-radius: 34px;
+    border-width: 2px;
+    border-color: #34363c;
+    background-color: #141518;
+  }
+  .header {
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 24px;
+    padding-bottom: 22px;
+    padding-left: 26px;
+    padding-right: 26px;
+    border-radius: 32px;
+    background-color: #2b3a8f;
+  }
+  .eyebrow {
+    color: #e6e9ff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+  }
+  .title {
+    color: #ffffff;
+    font-size: 34px;
+    font-weight: 700;
+  }
+  .body {
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 22px;
+    padding-bottom: 24px;
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+  .streak {
+    color: #ffb703;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .stat {
+    color: #dddfe3;
+    font-size: 21px;
+  }
+  .ghost {
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-top: 6px;
+    border-radius: 22px;
+    border-width: 2px;
+    border-color: #3a3b40;
+    background-color: #1c1d20;
+    color: #c9ccd4;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .xr {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 22px;
+    background-color: #f5d90a;
+    color: #1c1d20;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .icon {
+    width: 26px;
+    height: 26px;
+    color: #1c1d20;
+  }
+</style>
+<div class="card">
+  <div id="today-header" class="header">
+    <div class="eyebrow">TODAY</div>
+    <span id="today-title" class="title">Let's begin</span>
+  </div>
+  <div class="body">
+    <span id="streak-text" class="streak">0-day streak</span>
+    <span id="progress-text" class="stat">0 of 3 tasks, focus not done</span>
+    <span id="minutes-text" class="stat">Focus today: 0 min</span>
+    <div id="recenter-btn" class="ghost">Bring desk to me</div>
+    <div id="xr-button" class="xr">
+      <RectangleGoggles class="icon"></RectangleGoggles>
+      <span>Enter XR</span>
+    </div>
+    <div id="exit-button" class="xr" style="display: none">
+      <LogIn class="icon"></LogIn>
+      <span>Exit to Browser</span>
+    </div>
+  </div>
+</div>
