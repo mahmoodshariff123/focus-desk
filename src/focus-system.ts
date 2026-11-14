@@ -182,7 +182,17 @@ export class FocusDeskSystem extends createSystem({
       exitButton.setProperties({ display: 'none' });
       return;
     }
-    this.listen(xrButton, () => this.world.launchXR());
+    const xrLabel = today.requireElementById<UIKit.Text>('xr-label');
+    let xrSupported = false;
+    void (navigator.xr?.isSessionSupported('immersive-ar') ?? Promise.resolve(false))
+      .catch(() => false)
+      .then((supported) => {
+        xrSupported = supported;
+        if (!supported) xrLabel.setProperties({ text: 'Open on Meta Quest' });
+      });
+    this.listen(xrButton, () => {
+      if (xrSupported) this.world.launchXR();
+    });
     this.listen(exitButton, () => this.world.exitXR());
     this.cleanupFuncs.push(
       this.world.visibilityState.subscribe((visibility) => {

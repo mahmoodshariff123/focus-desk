@@ -93,7 +93,7 @@
     <div id="recenter-btn" class="ghost">Bring desk to me</div>
     <div id="xr-button" class="xr">
       <RectangleGoggles class="icon"></RectangleGoggles>
-      <span>Enter XR</span>
+      <span id="xr-label">Enter XR</span>
     </div>
     <div id="exit-button" class="xr" style="display: none">
       <LogIn class="icon"></LogIn>
