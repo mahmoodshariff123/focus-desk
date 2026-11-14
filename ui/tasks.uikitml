@@ -1,0 +1,87 @@
+<!-- Morning plan: three tasks. FocusDeskSystem fills labels and colors. -->
+<style>
+  .card {
+    flex-direction: column;
+    width: 420px;
+    gap: 14px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    padding-left: 26px;
+    padding-right: 26px;
+    border-radius: 34px;
+    border-width: 2px;
+    border-color: #34363c;
+    background-color: #141518;
+  }
+  .eyebrow {
+    color: #f5d90a;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+  }
+  .title {
+    color: #fafaf7;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .row {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 22px;
+    border-width: 2px;
+    border-color: #3a3b40;
+    background-color: #232427;
+    cursor: pointer;
+  }
+  .check {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: #8a8d96;
+    background-color: #232427;
+  }
+  .label {
+    color: #f1f1ee;
+    font-size: 22px;
+  }
+  .ghost {
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-top: 4px;
+    border-radius: 22px;
+    border-width: 2px;
+    border-color: #3a3b40;
+    background-color: #1c1d20;
+    color: #c9ccd4;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+</style>
+<div class="card">
+  <div class="eyebrow">MORNING PLAN</div>
+  <div class="title">3 small wins</div>
+  <div id="task-0" class="row">
+    <div id="task-0-check" class="check"></div>
+    <span id="task-0-label" class="label">Task one</span>
+  </div>
+  <div id="task-1" class="row">
+    <div id="task-1-check" class="check"></div>
+    <span id="task-1-label" class="label">Task two</span>
+  </div>
+  <div id="task-2" class="row">
+    <div id="task-2-check" class="check"></div>
+    <span id="task-2-label" class="label">Task three</span>
+  </div>
+  <div id="shuffle-btn" class="ghost">New tasks</div>
+</div>
